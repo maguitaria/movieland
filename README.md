@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# MovieLand Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MovieLand is a simple React-based web application that allows users to search for movies using the OMDB API and display the search results. This README file provides an overview of the project structure and how to set up and run the application locally.
 
-## Available Scripts
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [License](#license)
 
-In the project directory, you can run:
+## Prerequisites
+Before you can run MovieLand locally, ensure that you have the following prerequisites installed on your system:
+- [Node.js](https://nodejs.org/): You will need Node.js to run the React application.
 
-### `npm start`
+## Installation
+To set up and run the MovieLand web application, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository to your local machine:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone <repository-url>
+   ```
 
-### `npm test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   cd movies_react
+   ```
 
-### `npm run build`
+3. Install the required Node.js packages using npm (Node Package Manager):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+Now that you have MovieLand installed, you can run the application locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start the development server:
 
-### `npm run eject`
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Open a web browser and go to `http://localhost:3000` to access the MovieLand web application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. You can enter a movie title in the search input field and click the search icon to search for movies. The search results will be displayed on the page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Enjoy exploring movies!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
+The MovieLand project is structured as follows:
 
-## Learn More
+- `App.js`: The main React component that renders the MovieLand application. It includes the search functionality and displays movie results.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `MovieCard.jsx`: A reusable component for rendering individual movie cards.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `search.svg`: An SVG icon used for the search button.
 
-### Code Splitting
+- `App.css`: CSS styles for the MovieLand application.
+![Alt text](image.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to contribute to this project, report issues, or suggest improvements. Enjoy using MovieLand!
