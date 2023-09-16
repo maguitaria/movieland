@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import InfiniteScroll from "react-infinite-scroll-component";
 import MovieCard from "./MovieCard.jsx";
 import SearchIcon from "./search.svg";
 import "./App.css";
@@ -12,7 +12,7 @@ const App = () => {
   const [movies, setMovies] = useState([]); // movies are an array fetched from API
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies();
   }, []);
 
   const searchMovies = async (title) => {
