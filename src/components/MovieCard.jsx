@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type, Plot, Rating, Genre} }) => {
+const MovieCard = ({
+  movie: { imdbID, Year, Poster, Title, Type, Plot, Rating, Genre },
+}) => {
   return (
     <div className="movie" key={imdbID}>
       <div>
@@ -10,10 +13,12 @@ const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type, Plot, Rating, G
       </div>
 
       <div>
-        <img
-          src={Poster !== "N/A" ? Poster : "https://via.placeholder.com/400"}
-          alt={Title}
-        />
+        <Link to={`/movieland/movie/${imdbID}`}>
+          <img
+            src={Poster !== "N/A" ? Poster : "https://via.placeholder.com/400"}
+            alt={Title}
+          />
+        </Link>
       </div>
 
       <div>
@@ -23,7 +28,6 @@ const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type, Plot, Rating, G
         <span>Genre</span>
         <h4>{Genre}</h4>
       </div>
-    
     </div>
   );
 };
