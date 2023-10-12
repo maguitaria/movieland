@@ -3,6 +3,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import MovieCard from "../components/MovieCard";
 import SearchIcon from "../assets/search.svg";
 import   "../css/App.css";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../firebase';
 
 const API_URL = "https://www.omdbapi.com?apikey=d97d3ff1";
 
@@ -42,9 +44,30 @@ const MovieList = () => {
       setHasMore(false);
     }
   };
-
+  // Function to define if user has logged in/ is not signep up yet.
+ useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              // User is signed in, see docs for a list of available properties
+              // https://firebase.google.com/docs/reference/js/firebase.User
+              const uid = user.uid;
+              alert(`Signed up, login successful! \nYour UID is ${uid}`)
+              console.log("uid", uid)
+              if (uid) {
+                alert("You are already signed up!")
+              }
+            } else {
+              // User is signed out
+              // ...
+              console.log("user is logged out")
+            }
+          });
+         
+    }, [])
+ 
   return (
     <div className="app">
+      
       <div className="search">
         <input
           value={searchTerm}
