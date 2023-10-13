@@ -29,7 +29,6 @@ jobs:
           git checkout --orphan gh-pages
           git rm -rf .
           git clean -ffdx
-          mv * .
           git add .
           git commit -m "Deploy to GitHub Pages"
           git branch -M gh-pages
