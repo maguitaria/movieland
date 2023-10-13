@@ -28,6 +28,7 @@ jobs:
         run: |
           git config user.email "t2glma00@students.oamk.fi"
           git config user.name "maguitaria"
+          git config pull.rebase false  # Set Git pull strategy to merge
           git checkout -B gh-pages
           git pull origin gh-pages
 
