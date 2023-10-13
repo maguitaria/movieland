@@ -30,7 +30,7 @@ jobs:
           git config pull.rebase false  # Set Git pull strategy to merge
           git stash
           git checkout -B gh-pages
-                  
+                   git push --set-upstream origin gh-pages 
           git pull origin gh-pages --allow-unrelated-histories
 
       - name: Deploy to gh-pages
