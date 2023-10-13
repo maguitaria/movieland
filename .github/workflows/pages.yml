@@ -28,12 +28,14 @@ jobs:
           git config user.email "t2glma00@students.oamk.fi"
           git config user.name "maguitaria"
           git config pull.rebase false  # Set Git pull strategy to merge
+          git stash
           git checkout -B gh-pages
                   
           git pull origin gh-pages --allow-unrelated-histories
 
       - name: Deploy to gh-pages
         run: |
+         
           git add -A
           git commit -m "Deploy latest build to gh-pages"
           npm run deploy
