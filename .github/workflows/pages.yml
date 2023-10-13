@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  build-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -24,15 +24,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Push to gh-pages branch
+      - name: Deploy to gh-pages
         run: |
+          git config user.email "t2glma00@students.oamk.fi"
+          git config user.name "maguitaria"
           git checkout --orphan gh-pages
-          git rm -rf .
-          git clean -ffdx
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git branch -M gh-pages
-          git push -f origin gh-pages
-        env:
-          CI: false
-        if: github.ref == 'refs/heads/main'
+          rm -rf *
+          mv build/* .
+          git add -A
+          git commit -m "Deploy latest build to gh-pages"
+          git push origin gh-pages
