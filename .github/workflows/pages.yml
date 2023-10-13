@@ -21,8 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
+     
 
       - name: Pull latest changes from gh-pages
         run: |
@@ -30,10 +29,11 @@ jobs:
           git config user.name "maguitaria"
           git config pull.rebase false  # Set Git pull strategy to merge
           git checkout gh-pages
+                  
           git pull origin gh-pages --allow-unrelated-histories
 
       - name: Deploy to gh-pages
         run: |
           git add -A
           git commit -m "Deploy latest build to gh-pages"
-          git push origin gh-pages
+          npm run deploy
