@@ -1,5 +1,5 @@
 import React from "react";
-import {  Link, HashRouter, Routes, Route } from "react-router-dom";
+import {   HashRouter, Routes, Route } from "react-router-dom";
 import MovieList from "./pages/MovieList.jsx";
 import "./css/App.css";
 import MovieDetail from "./pages/MovieDetail.jsx";
