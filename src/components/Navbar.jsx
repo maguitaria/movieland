@@ -1,52 +1,52 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import {  Link } from "react-router-dom";
+import  Logout  from "../pages/Logout"
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+  CDBSidebarFooter,
+} from 'cdbreact';
 const Navbar = () => {
-  const data = [
-    {
-      icon: "fire",
-      name: "Trending",
-      link: "/",
-    },
-    {
-      icon: "film",
-      name: "Movies",
-      link: "/movieland",
-    },
-    {
-      icon: "tv",
-      name: "TV Series",
-      link: "/tv",
-    },
-    {
-      icon: "search",
-      name: "Search",
-      link: "/search",
-    },
-  ];
+   return (
+     <CDBSidebar
+       textColor="#333"
+       backgroundColor="#f0f0f0"
+       className={""}
+       breakpoint={0}
+       toggled={false}
+       minWidth={""}
+       maxWidth={""}
+     >
+       <CDBSidebarHeader prefix={<i className="fa fa-bars" />}>
+        
+       </CDBSidebarHeader>
+       <CDBSidebarContent>
+         <CDBSidebarMenu>
+           <CDBSidebarMenuItem icon="th-large">
+             <Link to="/"> Home </Link>
+           </CDBSidebarMenuItem>
+           <CDBSidebarMenuItem icon="sticky-note">
+             {" "}
+             <Link to="/signup">Signup</Link>
+           </CDBSidebarMenuItem>
+           <CDBSidebarMenuItem icon="chart-line" iconType="solid">
+             {" "}
+             <Link to="/login">Login</Link>
+           </CDBSidebarMenuItem>
+           <CDBSidebarMenuItem icon="chart-line" iconType="solid" >
+             {" "}
+             <Link to="/logout" ><Logout/></Link>
+           </CDBSidebarMenuItem>
+         </CDBSidebarMenu>
+       </CDBSidebarContent>
 
-  return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12 text-center bg-dark footer">
-          {data.map((item) => (
-            <NavLink
-              to={item.link}
-              key={item.link}
-              activeClassName="active"
-              className="nav-link"
-            >
-              <button className="col-sm-2 col-md-2 btn btn-dark">
-                <span className="bi bi-" aria-hidden="true"></span> {/* Use Bootstrap icon class */}
-                <br />
-                <h5 className="pt-1 fs-6">{item.name}</h5>
-              </button>
-            </NavLink>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+       <CDBSidebarFooter style={{ textAlign: "center" }}>
+       
+       </CDBSidebarFooter>
+     </CDBSidebar>
+   );
 };
-
 export default Navbar;

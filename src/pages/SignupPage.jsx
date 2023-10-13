@@ -2,7 +2,15 @@ import React, {useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../firebase';
- 
+ import {
+   CDBInput,
+   CDBCard,
+   CDBCardBody,
+   CDBIcon,
+   CDBBtn,
+   CDBLink,
+   CDBContainer,
+ } from "cdbreact";
 const Signup = () => {
     const navigate = useNavigate();
  
@@ -33,61 +41,73 @@ const Signup = () => {
     }
  
   return (
-    <main >        
-        <section>
-            <div>
-                <div>                  
-                    <h1> FocusApp </h1>                                                                            
-                    <form>                                                                                            
-                        <div>
-                            <label htmlFor="email-address">
-                                Email address
-                            </label>
-                            <input
-                                type="email"
-                                label="Email address"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}  
-                                required                                    
-                                placeholder="Email address"                                
-                            />
-                        </div>
+    <main>
+      <section>
+   
 
-                        <div>
-                            <label htmlFor="password">
-                                Password
-                            </label>
-                            <input
-                                type="password"
-                                label="Create password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)} 
-                                required                                 
-                                placeholder="Password"              
-                            />
-                        </div>                                             
-                        
-                        <button
-                            type="submit" 
-                            onClick={onSubmit}                        
-                        >  
-                            Sign up                                
-                        </button>
-                                                                     
-                    </form>
-                   
-                    <p>
-                        Already have an account?{' '}
-                        <NavLink to="/movieland/login" >
-                            
-                            Sign in
-                        </NavLink>
-                    </p>                   
-                </div>
+        <CDBContainer>
+          <CDBCard style={{ width: "30rem" }}>
+            <div
+              style={{ background: "black" }}
+              className="text-center text-white"
+            >
+              <p className="h5 mt-2 py-4 font-weight-bold">Register</p>
             </div>
-        </section>
+            <CDBCardBody className="mx-4">
+              <div>
+                <label htmlFor="email-address"></label>
+                <CDBInput
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email address"
+                />
+              </div>
+              <div>
+                <label htmlFor="password"></label>
+                <CDBInput
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                />
+              </div>
+
+              <div className="mt-5 d-flex flex-wrap justify-content-center align-items-center">
+                <p className="m-0">Remember me </p>
+                <CDBLink to="#">Forgot Password ?</CDBLink>
+              </div>
+              <CDBBtn color="dark" outline className="btn-block my-3 mx-0" onClick={onSubmit}>
+                Sign in
+              </CDBBtn>
+              <p className="text-center">
+                Already a member?{" "}
+                <CDBLink className="d-inline p-0">
+                  <NavLink to="/login">Register</NavLink>
+                </CDBLink>
+              </p>
+              <p className="text-center"> or sign in with</p>
+              <div className="flex-row my-3 d-flex justify-content-center">
+                <CDBBtn color="white" className="m-0" outline>
+                  <CDBIcon fab icon="facebook-f" />
+                </CDBBtn>
+                <CDBBtn color="white" className="m-0" outline>
+                  <CDBIcon fab icon="twitter" />
+                </CDBBtn>
+                <CDBBtn color="white" className="m-0" outline>
+                  <CDBIcon fab icon="linkedin-in" />
+                </CDBBtn>
+                <CDBBtn color="white" className="m-0" outline>
+                  <CDBIcon fab icon="github" />
+                </CDBBtn>
+              </div>
+            </CDBCardBody>
+          </CDBCard>
+        </CDBContainer>
+      </section>
     </main>
-  )
+  );
 }
+
  
 export default Signup

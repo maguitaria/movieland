@@ -9,7 +9,7 @@ const Home = () => {
     const handleLogout = () => {               
         signOut(auth).then(() => {
         // Sign-out successful.
-            navigate("/movieland");
+            navigate("/");
             console.log("Signed out successfully")
             alert("Logged out. We will miss you!")
         }).catch((error) => {
@@ -19,17 +19,11 @@ const Home = () => {
    
     return(
         <>
-            <nav>
-                <p>
-                    Welcome Home
-                </p>
- 
-                <div>
+            
         			<button onClick={handleLogout}>
-                        Logout
+                 Log out
                     </button>
-        		</div>
-            </nav>
+        
         </>
     )
 }

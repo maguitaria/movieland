@@ -33,6 +33,8 @@ To set up and run the MovieLand web application, follow these steps:
    ```bash
    npm install
    ```
+   ## Deployment
+   Just run ``` npm run deploy``` from main branch. It will automatically deploy the changes to branch ```gh-pages```.
 
 ## Usage
 Now that you have MovieLand installed, you can run the application locally:
