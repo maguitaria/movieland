@@ -24,14 +24,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to gh-pages
+      - name: Pull latest changes from gh-pages
         run: |
           git config user.email "t2glma00@students.oamk.fi"
           git config user.name "maguitaria"
           git checkout -B gh-pages
+          git pull origin gh-pages
+
+      - name: Deploy to gh-pages
+        run: |
           git add -A
           git commit -m "Deploy latest build to gh-pages"
           git push origin gh-pages
-
-      - name: Run npm deploy
-        run: npm run deploy
