@@ -33,7 +33,7 @@ const Navbar = () => {
             <NavLink
               to={item.link}
               key={item.link}
-
+              activeClassName="active"
               className="nav-link"
             >
               <button className="col-sm-2 col-md-2 btn btn-dark">
