@@ -15,6 +15,7 @@ const App = () => {
       <h2 style={{ color: "white" }}>Best Movies of your choice!</h2>
 
       <Router>
+        Navbar
         <LeftNavbar />
         <Logout />
         <Routes>
