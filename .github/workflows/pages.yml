@@ -27,6 +27,7 @@ jobs:
           git config user.name "maguitaria"
           git config pull.rebase true  # Set Git pull strategy to merge
           git checkout -B gh-pages
+          git stash
           git pull origin gh-pages --allow-unrelated-histories
             git push --set-upstream origin gh-pages
 
