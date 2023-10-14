@@ -30,7 +30,7 @@ const Navbar = () => {
            </CDBSidebarMenuItem>
            <CDBSidebarMenuItem icon="sticky-note">
              {" "}
-             <Link to="/signup">Signup</Link>
+             <Link to="/signup">Register</Link>
            </CDBSidebarMenuItem>
            <CDBSidebarMenuItem icon="chart-line" iconType="solid">
              {" "}
