@@ -32,6 +32,9 @@ jobs:
           git checkout main -- build/*
           mv build/* .
           git add .
+          git config --global user.email "t2glma00@students.oamk.fi"
+          git config --global user.name "maguitaria"
+          
           git commit -m "Deploy to GitHub Pages"
           git push -f origin HEAD:gh-pages
         env:
