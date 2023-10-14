@@ -22,11 +22,9 @@ jobs:
         run: npm install
 
       - name: Build and Deploy
-        run: |
+        run: 
           npm run build
-          git config --global user.email "t2glma00@students.oamk.fi"
-          git config --global user.name "maguitaria"
-          npm run deploy
+      
 
       - name: Push to gh-pages branch
         run: |
