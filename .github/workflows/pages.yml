@@ -26,10 +26,9 @@ jobs:
           git config user.email "t2glma00@students.oamk.fi"
           git config user.name "maguitaria"
           git config pull.rebase true  # Set Git pull strategy to merge
-          git stash
           git checkout -B gh-pages
-          git push --set-upstream origin gh-pages 
           git pull origin gh-pages --allow-unrelated-histories
+            git push --set-upstream origin gh-pages
 
       - name: Deploy to gh-pages
         run: |
