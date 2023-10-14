@@ -21,8 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-     
-
       - name: Pull latest changes from gh-pages
         run: |
           git config user.email "t2glma00@students.oamk.fi"
@@ -35,5 +33,9 @@ jobs:
 
       - name: Deploy to gh-pages
         run: |
-         git push
-          npm run deploy
+          # Add necessary steps for deployment
+          # Ensure you correctly build your project before deploying
+           npm run deploy
+
+          # Then, push the built files to the gh-pages branch
+          git push origin gh-pages
